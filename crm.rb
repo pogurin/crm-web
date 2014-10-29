@@ -10,12 +10,11 @@ get '/' do
 end
 
 get "/contacts" do
-
-	erb :contacts
+	erb :contacts 
 end
 
-get '/contacts/new' do
-	erb :new_contact
+get '/contacts/new' do   # ルートの設定を行っている。/でくくられた値が、URLの名前。
+	erb :new_contact     # どこのVIEWに繋がっているのか分かる。
 end
 
 # post '/contacts' do
