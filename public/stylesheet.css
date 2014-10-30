@@ -31,6 +31,7 @@ a{
  list-style-type: none;
  background-color: orange;
  padding: 20px 30px;
+ bottom: 0px
 }
 
 .box-2 {
@@ -43,7 +44,7 @@ a{
 
 form{
 background-color: white;
-border:solid 50px;
+border:solid 10px;
 padding:0px 30px 15px 30px;
 margin:0 0 0px;
 font-family:Arial, sans-serif;
@@ -52,10 +53,11 @@ text-transform:uppercase;
 font-weight:bold;
 color:#333;
 cursor:pointer;
+text-align: center
 }
 
 .list-unstyled{
-background-color: white;
+ background-color: white;
  list-style-type: none;
  font-weight:bolder;
  margin: 50;
@@ -63,6 +65,7 @@ background-color: white;
  padding: 100;
  
 }
+
 
 
 
