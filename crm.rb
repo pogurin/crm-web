@@ -10,11 +10,12 @@ get '/' do
 end
 
 get "/contacts" do
-	erb :contacts 
+
+	erb :contacts
 end
 
-get '/contacts/new' do   # ルートの設定を行っている。/でくくられた値が、URLの名前。
-	erb :new_contact     # どこのVIEWに繋がっているのか分かる。
+get '/contacts/new' do
+	erb :new_contact
 end
 
 # post '/contacts' do
@@ -24,7 +25,7 @@ end
 post '/contacts' do
 	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
 	$rolodex.add_contact(new_contact)
-	puts params 
+	puts params # putsを入れることで、サーバー上での動きが確認可能。
 	redirect to('/contacts')
 end	
 

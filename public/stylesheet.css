@@ -1,17 +1,23 @@
-h1,p{
+h1,h2,p{
 	color: white;
 	font-size: 320%; 
 	font-weight:bold;
 	text-align: center;
 }
+h1,p highlighted
+{
+
+	background-color: orange;
+}
 
 body    {  
-    background-image: url("/sample.jpg"); 
+    background-image: url("/20130528o.jpg"); 
     background-size:  1500px 600px; 
 }  
 
 
 a{
+	list-style-type: none;
 	text-decoration: none;
 	color: black;
     font-weight: bold;
@@ -20,9 +26,24 @@ a{
     display: block;
 }
 
+.box-1 {
+ bottom: 0%;
+ list-style-type: none;
+ background-color: orange;
+ padding: 20px 30px;
+}
+
+.box-2 {
+ bottom: 0%;
+ list-style-type: none;
+ background: #2db34a;
+ padding: 20px 30px;
+}
+
 
 form{
-border:solid 30px #faebd7;
+background-color: white;
+border:solid 50px;
 padding:0px 30px 15px 30px;
 margin:0 0 0px;
 font-family:Arial, sans-serif;
@@ -32,6 +53,18 @@ font-weight:bold;
 color:#333;
 cursor:pointer;
 }
+
+.list-unstyled{
+background-color: white;
+ list-style-type: none;
+ font-weight:bolder;
+ margin: 50;
+ text-align: center;
+ padding: 100;
+ 
+}
+
+
 
 
 
