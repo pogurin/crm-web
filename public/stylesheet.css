@@ -8,16 +8,31 @@ h1,p{
 body    {  
     background-image: url("/sample.jpg"); 
     background-size:  1500px 600px; 
-
 }  
 
 
 a{
-	color:#cc0000;text-decoration:none;
-	text-align: center;
-	font-size: 120%; 
-	text-align: center;
-
+	text-decoration: none;
+	color: black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 53px;
+    display: block;
 }
+
+
+form{
+border:solid 30px #faebd7;
+padding:0px 30px 15px 30px;
+margin:0 0 0px;
+font-family:Arial, sans-serif;
+font-size:5em;
+text-transform:uppercase;
+font-weight:bold;
+color:#333;
+cursor:pointer;
+}
+
+
 
 
