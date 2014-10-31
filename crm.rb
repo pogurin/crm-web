@@ -2,9 +2,45 @@ require "sinatra"
 require "sinatra/reloader" if development?
 
 
+
+
+
+
 require_relative 'rolodex'
-require_relative 'contact'
-#require 'sinatra'
+
+require 'sinatra'
+require 'data_mapper'
+
+DataMapper.setup(:default, "sqlite3:database.sqlite3")
+
+class Contact
+	include DataMapp::Resource
+
+	attr_accessor :id, :first_name, :last_name, :email, :note
+
+	def initialize(first_name, last_name, email, note)
+		@first_name = first_name
+		@last_name = last_name
+		@email = email
+		@note = note
+	end
+end
+
+Class Contact
+include DataMapp::Resource
+
+Property :id, Serial
+Property :first_name, String
+Property :last_name, String
+Property :email, String
+Property :note,String
+end
+
+DataMapper.finalize
+DataMapper.auto_upgrade!
+
+
+
 
 $rolodex = Rolodex.new
 
@@ -36,8 +72,8 @@ get'/contacts/:id/show' do # ここの順番。
 end 
 
 get "/contacts/1000" do
-  @contact = $rolodex.find(1000)
-  erb :show_contact
+	@contact = $rolodex.find(1000)
+	erb :show_contact
 end
 
 #EDIT
