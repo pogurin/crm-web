@@ -9,3 +9,11 @@
 	<input type="submit" name="Submit">
 </form>
 
+<form action="/contacts/<%= @contact.id %>" method="post">
+	<input type="hidden" name="_method" value="delete"> <!-- We want to use delete Verb. -->
+	<input type="submit" name="delete Contact" value="Delete This Contact">
+</form>
+
+
+
+

@@ -1,14 +1,20 @@
 
 <h1>All Contacts</h1>
 
-<ul class="list-unstyled">
+<ul>
 	<% @contacts.each do |contact| %>
-	<li><%= contact.first_name %></li> <li><%= contact.last_name %></li> <li><%= contact.email %></li> <li><%= contact.note %></li>
-	<a href='/contacts/<%= contact.id %>/show'>Show Contact</a>
-	<a href='/contacts/<%= contact.id %>/delete'>Delete</a>
-	<a href='/contacts/<%= contact.id %>/edit'>Edit</a>
+		<li><a href="/contacts/<%= contact.id %>"><%= contact.first_name %> <%= contact.last_name %></a></li>
+		<a href='/contacts/<%= contact.id %>/show'>Show Contact</a>
+		
+		<a href='/contacts/<%= contact.id %>/edit'>Edit</a> <!-- get request -->
 	<% end %>
 </ul>
+
+
+<!-- First  -->
+
+
+
 
 
 
