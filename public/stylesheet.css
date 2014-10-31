@@ -11,8 +11,8 @@ h1,p highlighted
 }
 
 body    {  
-    background-image: url("/20130528o.jpg"); 
-    background-size:  1500px 600px; 
+	background-image: url("/20130528o.jpg"); 
+	background-size:  1500px 600px; 
 }  
 
 
@@ -20,54 +20,62 @@ a{
 	list-style-type: none;
 	text-decoration: none;
 	color: black;
-    font-weight: bold;
-    text-align: center;
-    font-size: 53px;
-    display: block;
+	font-weight: bold;
+	text-align: center;
+	font-size: 53px;
+	display: block;
 }
 
 .box-1 {
- bottom: 0%;
- list-style-type: none;
- background-color: orange;
- padding: 20px 30px;
- bottom: 0px
+	bottom: 0%;
+	list-style-type: none;
+	background-color: orange;
+	padding: 20px 30px;
+	bottom: 0px
 }
 
 .box-2 {
- bottom: 0%;
- list-style-type: none;
- background: #2db34a;
- padding: 20px 30px;
+	bottom: 0%;
+	list-style-type: none;
+	background: #2db34a;
+	padding: 20px 30px;
 }
 
 
 form{
-background-color: white;
-border:solid 10px;
-padding:0px 30px 15px 30px;
-margin:0 0 0px;
-font-family:Arial, sans-serif;
-font-size:5em;
-text-transform:uppercase;
-font-weight:bold;
-color:#333;
-cursor:pointer;
-text-align: center
+	background-color: white;
+	border:solid 10px;
+	padding:0px 30px 15px 30px;
+	margin:0 0 0px;
+	font-family:Arial, sans-serif;
+	font-size:5em;
+	text-transform:uppercase;
+	font-weight:bold;
+	color:#333;
+	cursor:pointer;
+	text-align: center
 }
 
 .list-unstyled{
- background-color: white;
- list-style-type: none;
- font-weight:bolder;
- margin: 50;
- text-align: center;
- padding: 100;
- 
+	background-color: white;
+	list-style-type: none;
+	font-weight:bolder;
+	margin: 50;
+	text-align: center;
+	padding: 100;
+
 }
 
 
+.field {
+	margin-bottom: 1em;
+}
 
+
+p.show_contacts{
+	color: red;
+}
+/*赤にならない....*/
 
 
 
