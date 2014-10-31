@@ -1,7 +1,5 @@
-require "sinatra"
-require "sinatra/reloader" if development?
-
-
+# require "sinatra"
+# require "sinatra/reloader" if development?
 
 
 
@@ -14,26 +12,13 @@ require 'data_mapper'
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
 
 class Contact
-	include DataMapp::Resource
-
-	attr_accessor :id, :first_name, :last_name, :email, :note
-
-	def initialize(first_name, last_name, email, note)
-		@first_name = first_name
-		@last_name = last_name
-		@email = email
-		@note = note
-	end
-end
-
-Class Contact
-include DataMapp::Resource
-
-Property :id, Serial
-Property :first_name, String
-Property :last_name, String
-Property :email, String
-Property :note,String
+	include DataMapper::Resource
+	
+	property :id, Serial
+ 	property :first_name, String
+ 	property :last_name, String
+	property :email, String
+	property :note, String
 end
 
 DataMapper.finalize
