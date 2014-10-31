@@ -1,6 +1,6 @@
 <h1>Edit a Contact</h1>
 
-<form action="/contacts/<%= @contact.id %>" method="post"> '/contacts/<%= contact.id %>/edit/'
+<form action="/contacts/<%= @contact.id %>" method="post">  
   <input type="hidden" name="_method" value="put">
   <input type="text" name="first_name" value="<%= @contact.first_name %>">
   <input type="text" name="last_name" value="<%= @contact.last_name %>">
@@ -8,3 +8,4 @@
   <input type="text" name="note" value="<%= @contact.note %>">
   <input type="submit" name="Submit">
 </form>
+

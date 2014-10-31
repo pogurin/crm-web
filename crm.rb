@@ -8,16 +8,6 @@ require_relative 'contact'
 
 $rolodex = Rolodex.new
 
-get'/contacts/:id/show/' do # 　ここの順番。
-	@contact = $rolodex.find params[:id].to_i
-	erb :show_contact
-end 
-
-get "/contacts/1000" do
-  @contact = $rolodex.find(1000)
-  erb :show_contact
-end
-
 get '/' do
 	@crm_app_name = "My CRM" #route 
 	erb :index
@@ -32,7 +22,27 @@ get '/contacts/new' do
 	erb :new_contact
 end
 
-get '/contacts/:id/edit' do
+post '/contacts' do
+	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
+	$rolodex.add_contact(new_contact)
+	puts params # putsを入れることで、サーバー上での動きが確認可能。
+	redirect to('/contacts') 
+end	
+
+#Show
+get'/contacts/:id/show' do # ここの順番。
+	@contact = $rolodex.find params[:id].to_i
+	erb :show_contact
+end 
+
+get "/contacts/1000" do
+  @contact = $rolodex.find(1000)
+  erb :show_contact
+end
+
+#EDIT
+
+get "/contacts/:id/edit" do
 	@contact = $rolodex.find(params[:id].to_i)
 	if @contact
 		erb :edit_contact
@@ -56,32 +66,32 @@ put "/contacts/:id" do
 	end
 end
 
+# Method POST
+# post '/contacts' do
+# 	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
+# 	$rolodex.add_contact(new_contact)
+# 	puts params # putsを入れることで、サーバー上での動きが確認可能。
+# 	redirect to('/contacts') 
+# end	
 
-delete "/contacts/:id" do
+
+#DELETE
+# <h1>Edit a Contact</h1>
+
+# <form action="/contacts/<%= @contact.id %>" method="post">  
+#   <input type="hidden" name="_method" value="put">
+ 
+
+
+
+delete '/contacts/:id' do
 	@contact = $rolodex.find(params[:id].to_i)
 	if @contact
+		
 		$rolodex.remove_contact(@contact)
 		redirect to("/contacts")
 	else
 		raise Sinatra::NotFound
 	end
 end
-
-# post '/contacts' do
-# 	puts params
-# end
-
-post '/contacts' do
-	new_contact = Contact.new(params[:first_name], params[:last_name], params[:email], params[:note])
-	$rolodex.add_contact(new_contact)
-	puts params # putsを入れることで、サーバー上での動きが確認可能。
-	redirect to('/contacts') 
-end	
-
-
-get '/contacts/1000/edit/' do
-  "Hello World"
-end
-
-
 

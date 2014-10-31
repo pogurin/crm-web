@@ -4,15 +4,15 @@
 <ul class="list-unstyled">
 	<% @contacts.each do |contact| %>
 	<li><%= contact.first_name %></li> <li><%= contact.last_name %></li> <li><%= contact.email %></li> <li><%= contact.note %></li>
-	<a href='/contacts/<%= contact.id %>/show/'>Show contact</a>
-	<a href='/contacts/<%= contact.id %>/delete/'>delete</a>
-	<a href='/contacts/<%= contact.id %>/edit/'>edit</a>
+	<a href='/contacts/<%= contact.id %>/show'>Show contact</a>
+	<a href='/contacts/<%= contact.id %>/delete'>delete</a>
+	<a href='/contacts/<%= contact.id %>/edit'>edit</a>
 	<% end %>
 </ul>
 
+
+
 <!-- to make a link for edit contact. -->
-
-
 <!-- コンタクトメソッドは、アトリビューターから来ている。-->
 
 
