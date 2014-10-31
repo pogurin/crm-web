@@ -75,19 +75,20 @@ end
 # end	
 
 
-#DELETE
-# <h1>Edit a Contact</h1>
-
-# <form action="/contacts/<%= @contact.id %>" method="post">  
-#   <input type="hidden" name="_method" value="put">
- 
-
+# Delete #迷ったのは、get の部分とgetに対応するファイルがなかったから。hiddenのコマンドを作成しないとだめ　。
+get "/contacts/:id/delete" do
+	@contact = $rolodex.find(params[:id].to_i)
+	if @contact
+		erb :delete_contact
+	else
+		raise Sinatra::NotFound
+	end
+end
 
 
 delete '/contacts/:id' do
 	@contact = $rolodex.find(params[:id].to_i)
 	if @contact
-		
 		$rolodex.remove_contact(@contact)
 		redirect to("/contacts")
 	else
