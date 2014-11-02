@@ -66,14 +66,16 @@ end
 
 #Show
 get'/contacts/:id/show' do # ここの順番。
-	@contact = $rolodex.find params[:id].to_i
+	@contact = Contact.get(params[:id].to_i)
 	erb :show_contact
 end 
 
-get "/contacts/1000" do
-	@contact = $rolodex.find(1000)
-	erb :show_contact
-end
+
+
+# get "/contacts/1000" do
+# 	@contact = $rolodex.find(1000)
+# 	erb :show_contact
+# end
 
 #EDIT
 
